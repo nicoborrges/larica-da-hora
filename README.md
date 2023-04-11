@@ -19,14 +19,44 @@ O objetivo do projeto é ser uma ferramenta para ajudar a organizar receitas cul
 
 O Firestore do Firebase é utilizado para armazenar as receitas. Cada receita é representada por um documento na coleção "receitas". O documento contém os seguintes campos:
 
-- `id` (string): ID único da receita
-- `name` (string): Nome da receita
-- `cover` (string): Url da imagem da receita
-- `ingredients` (map): Lista de ingredientes da receita
-- `instructions` (array): Modo de preparo da receita
-- `time` (number): Tempo de preparo da receita
-- `total_ingredients` (number): Total de ingredientes da receita
-- `video` (string): Url do video da receita
+<table>
+  <tr>
+    <th>Campo</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>ID único da receita</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Nome da receita</td>
+  </tr>
+  <tr>
+    <td>cover</td>
+    <td>Url da imagem da receita</td>
+  </tr>
+  <tr>
+    <td>ingredients</td>
+    <td>Lista de ingredientes da receita</td>
+  </tr>
+  <tr>
+    <td>instructions</td>
+    <td>Modo de preparo da receita</td>
+  </tr>
+  <tr>
+    <td>time</td>
+    <td>Tempo de preparo da receita</td>
+  </tr>
+  <tr>
+    <td>total_ingredients</td>
+    <td>Total de ingredientes da receita</td>
+  </tr>
+  <tr>
+    <td>video</td>
+    <td>Url do video da receita</td>
+  </tr>
+</table>
 
 ## AsyncStorage
 
