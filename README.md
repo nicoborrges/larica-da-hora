@@ -73,3 +73,7 @@ O React Native Modal é utilizado para exibir o video no youtube das receitas. O
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou um pull request.
+
+## Desenvolvedor
+
+Nicolas Borges (nicoborrges)
