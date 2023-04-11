@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function transformData(doc) {
-    const id = doc.id;
+    const id = doc.name+'00';
     const data = doc;
     const { cover, ingredients, instructions, name, time, total_ingredients, video } = data;
   
