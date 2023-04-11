@@ -7,6 +7,7 @@ import {Ionicons} from '@expo/vector-icons';
 import { useState, useEffect } from "react";
 import db from "../../config/firebase";
 import { FoodList } from "../../components/foodlist";
+import { useNavigation } from "@react-navigation/native";
 
 export function Home(){
 
@@ -14,9 +15,14 @@ export function Home(){
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [inputValue, setInputValue] = useState('');
+    const navigation = useNavigation();
 
     function handleSearch(){
-        console.log(inputValue);
+      if(!inputValue) return;
+      
+      let input = inputValue;
+      navigation.navigate('Search', {nameReceipe: input});
+      setInputValue('');
     }
     
     useEffect(() => {

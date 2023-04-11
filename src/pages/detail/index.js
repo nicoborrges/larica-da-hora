@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         marginBottom:4,
         color:'#000',
+        maxWidth: '90%',
     },
     ingredientsText:{
         marginBottom:14,
