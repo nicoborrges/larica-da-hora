@@ -1,16 +1,30 @@
 import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
+import { View as MotiView } from "moti";
 
 export function Logo(){
     return(
-        <View>
+        <MotiView
+            from={{
+            opacity:0,
+            translateX: -50,
+            }}
+            animate={{
+            opacity:1,
+            translateX: 0,
+            }}
+            transition={{
+            type:'spring',
+            duration: 850
+            }}
+        >
             <LinearGradient 
             style={styles.logoArea}
-            colors={['#ff2b2b', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee']}
+            colors={['#020024', '#097932', '#00ffa6']}
             >
                 <Text style={styles.logo}>Larica da Hora</Text>
             </LinearGradient>
-        </View>
+        </MotiView>
     )
 }
 

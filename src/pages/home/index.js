@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import db from "../../config/firebase";
 import { FoodList } from "../../components/foodlist";
 import { useNavigation } from "@react-navigation/native";
+import { Text as MotiText } from "moti";
 
 export function Home(){
 
@@ -60,8 +61,42 @@ export function Home(){
           ) : (
             <>
               <Logo />
-              <Text style={styles.title}>Encontre a receita</Text>
-              <Text style={styles.title}>para salvar sua larica</Text>
+              <MotiText 
+                style={styles.title}
+                from={{
+                  opacity:0,
+                  translateY: 15,
+                }}
+                animate={{
+                  opacity:1,
+                  translateY: 0,
+                }}
+                transition={{
+                  delay:100,
+                  type:'timing',
+                  duration: 750
+                }}
+              >
+                Encontre a receita
+              </MotiText>
+              <MotiText 
+                style={styles.title}
+                from={{
+                  opacity:0,
+                  translateY: 18,
+                }}
+                animate={{
+                  opacity:1,
+                  translateY: 0,
+                }}
+                transition={{
+                  delay:200,
+                  type:'timing',
+                  duration: 950
+                }}
+              >
+                para salvar sua larica
+              </MotiText>
       
               <View style={styles.form}>
                 <TextInput 
