@@ -21,7 +21,7 @@ export function Home(){
     function handleSearch(){
       if(!inputValue) return;
       
-      let input = inputValue;
+      let input = inputValue.toLowerCase();
       navigation.navigate('Search', {nameReceipe: input});
       setInputValue('');
     }

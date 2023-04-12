@@ -6,6 +6,9 @@ export function FoodList({data}){
 
     const navigation = useNavigation();
 
+    const str = data.name;
+    const formattedName = str.charAt(0).toUpperCase() + str.slice(1);
+
     function handleNavigate(){
         navigation.navigate('Detail', {data: data});
     }
@@ -17,7 +20,7 @@ export function FoodList({data}){
                 style={styles.cover} 
             />
             <View style={styles.info}>
-                <Text style={styles.name}>{data.name}</Text>
+                <Text style={styles.name}>{formattedName}</Text>
                 <Text style={styles.description}>{data.total_ingredients} ingredientes | {data.time}min</Text>
             </View>
             <LinearGradient 
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     }, 
     info:{
         position:'absolute',
-        bottom:14,
+        bottom:20,
         left:14,
         zIndex:99,
     },
