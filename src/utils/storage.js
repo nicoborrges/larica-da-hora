@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+/*
 export function transformData(doc) {
     const id = doc.name+'00';
     const data = doc;
@@ -18,6 +19,7 @@ export function transformData(doc) {
   
     return transformedData;
 }
+*/
 
 export async function getFavorites(key){
     const favorites = await AsyncStorage.getItem(key)
@@ -26,15 +28,13 @@ export async function getFavorites(key){
 export async function saveFavorite(key, newItem){
     let myFavorites = await getFavorites(key);
 
-    let transformedItem = transformData(newItem);
-
-    let hasItem = myFavorites.some( item => item.name === transformedItem.name )
+    let hasItem = myFavorites.some( item => item.name === newItem.name )
 
     if(hasItem){
         console.log("Esse item já está salvo");
         return;
     }
-    myFavorites.push(transformedItem)
+    myFavorites.push(newItem)
 
     await AsyncStorage.setItem(key, JSON.stringify(myFavorites));
     console.log("Salvo com sucesso");
@@ -52,8 +52,7 @@ export async function removeFavorite(receipeName){
 }
 export async function isFavorite(receipe){
     let myReceipes = await getFavorites('@applarica')
-    let transformedItem = transformData(receipe);
-    const favorite = myReceipes.find( item => item.name === transformedItem.name )
+    const favorite = myReceipes.find( item => item.name === receipe.name )
 
     if(favorite){
         return true;
