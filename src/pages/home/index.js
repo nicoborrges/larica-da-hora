@@ -25,6 +25,10 @@ export function Home(){
       navigation.navigate('Search', {nameReceipe: input});
       setInputValue('');
     }
+
+    function handleInputSubmit() {
+      handleSearch();
+    }
     
     useEffect(() => {
         const fetchReceitas = async () => {
@@ -104,6 +108,7 @@ export function Home(){
                   style={styles.input}
                   value={inputValue}
                   onChangeText={(text) => setInputValue(text)}
+                  onSubmitEditing={handleInputSubmit}
                 />
                 <TouchableOpacity onPress={handleSearch}>
                   <Ionicons name='search' size={28} color='#4cbe6c' />
