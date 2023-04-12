@@ -15,12 +15,14 @@ export function Search(){
 
     useEffect(() => {
         const fetchSearched = async () => {
+          const str = route.params?.nameReceipe;
+          const formmatedStr = str.toLowerCase();
           setLoading(true);
           try {
             console.log('request iniciado');
             console.log(new Date());
             const querySnapshot = await getDocs(collection(db, 'receitas'));
-            const docs = querySnapshot.docs.filter(doc => doc.data().name.includes(route.params?.nameReceipe)).map(doc => doc.data());
+            const docs = querySnapshot.docs.filter(doc => doc.data().name.includes(formmatedStr)).map(doc => doc.data());
             setSearched(docs);
             setLoading(false);
           } catch (e) {
